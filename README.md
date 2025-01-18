@@ -19,6 +19,7 @@ pip install git+https://github.com/BartekCupial/nle-progress.git
 ```
 
 ### Usage
+To monitor progress as a metric
 ```bash
 import gym
 import nle
@@ -29,4 +30,14 @@ env = NLEProgressWrapper(env, progression_on_done_only=False)
 obs = env.reset()
 obs, reward, done, info = env.step(env.action_space.sample())
 print(info["episode_extra_stats"])
+```
+
+To use progress as a reward
+```bash
+import gym
+import nle_progress
+
+env = gym.make("NetHackProgress-v0")
+obs = env.reset()
+obs, reward, done, info = env.step(env.action_space.sample())
 ```

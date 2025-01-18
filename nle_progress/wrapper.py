@@ -14,7 +14,7 @@ class NLEProgressWrapper(gym.Wrapper):
 
     def step(self, action):
         obs, reward, done, info = super().step(action)
-        self.progress.update(obs, reward, done, info)
+        self.progress.update(obs["blstats"])
 
         if not self.progression_on_done_only or done:
             info["episode_extra_stats"] = self.episode_extra_stats(info)
