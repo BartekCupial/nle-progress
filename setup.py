@@ -18,7 +18,7 @@ setup(
     description="NetHack Progression Metric",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    version="0.1.0",
+    version="0.2.0",
     url="https://github.com/BartekCupial/nle-progress",
     author="Bartłomiej Cupiał",
     license="MIT",
