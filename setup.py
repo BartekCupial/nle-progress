@@ -24,7 +24,7 @@ setup(
     license="MIT",
     keywords="reinforcement learning ai nle nethack",
     project_urls={},
-    install_requires=["gym==0.23"],
+    install_requires=["gymnasium", "nle>=1.0"],
     extras_require={
         "dev": ["black", "isort>=5.12", "pytest<8.0", "flake8", "pre-commit", "twine"],
     },
