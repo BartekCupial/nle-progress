@@ -10,7 +10,12 @@ class NLEProgressWrapper(gym.Wrapper):
 
     def reset(self, **kwargs):
         self.progress = NLEProgress()
-        return self.env.reset(**kwargs)
+        obs, info = self.env.reset(**kwargs)
+        self.progress.update(obs["blstats"])
+        if not self.progression_on_done_only:
+            info["episode_extra_stats"] = self.episode_extra_stats(info)
+
+        return obs, info
 
     def step(self, action):
         obs, reward, term, trun, info = self.env.step(action)
